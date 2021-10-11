@@ -16,12 +16,12 @@ const Calc = () => {
     }
 
     return (
-        <div className="calc">
-            <input type="number" value={num1} onChange={(e) => setNum1(Number(e.target.value))} />
-            <input type="text" value={operator} onChange={(e) => setOperator(e.target.value)} />
-            <input type="number" value={num2} onChange={(e) => setNum2(Number(e.target.value))} />
-            <button onClick={calculator}>calcular</button>
-            <p>{total}</p>
+        <div className="calc card">
+            <input className="input" type="number" value={num1} onChange={(e) => setNum1(Number(e.target.value))} />
+            <input className="input" type="text" value={operator} onChange={(e) => setOperator(e.target.value)} />
+            <input className="input" type="number" value={num2} onChange={(e) => setNum2(Number(e.target.value))} />
+            <button className="input btn" onClick={calculator}>Calculate</button>
+            <p className="result">{ `= ${total}`}</p>
         </div>
     )
 }
