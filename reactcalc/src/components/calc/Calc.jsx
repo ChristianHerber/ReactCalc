@@ -9,6 +9,7 @@ const Calc = () => {
     const [total, setTotal] = useState(num1 + num2)
 
     function calculator(){
+        if(operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') alert("Não é uma operação válida!")
         if(operator === '+') setTotal(num1 + num2)
         if(operator === '-') setTotal(num1 - num2)
         if(operator === '*') setTotal(num1 * num2)
