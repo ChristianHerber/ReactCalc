@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import './Calc.css'
+import { Card, Input, Select, Button, Result } from './styles'
 
 const Calc = () => {
 
@@ -17,13 +17,18 @@ const Calc = () => {
     }
 
     return (
-        <div className="calc card">
-            <input className="input" type="number" value={num1} onChange={(e) => setNum1(Number(e.target.value))} />
-            <input className="input" type="text" value={operator} onChange={(e) => setOperator(e.target.value)} />
-            <input className="input" type="number" value={num2} onChange={(e) => setNum2(Number(e.target.value))} />
-            <button className="input btn" onClick={calculator}>Calculate</button>
-            <p className="result">{ `= ${total}`}</p>
-        </div>
+        <Card>
+            <Input type="number" value={num1} onChange={(e) => setNum1(Number(e.target.value))} />
+            <Select value={operator} onChange={(e) => setOperator(e.target.value)}>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </Select>
+            <Input type="number" value={num2} onChange={(e) => setNum2(Number(e.target.value))} />
+            <Button onClick={calculator}>Calculate</Button>
+            <Result className="result">{ `= ${total}`}</Result>
+        </Card>
     )
 }
 
